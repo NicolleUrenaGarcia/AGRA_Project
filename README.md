@@ -2,6 +2,7 @@
 Integrantes: Nicolle Ureña, Nicolas Carrillo
 
 # Descripción del problema
+
 Se describe una realidad imaginaria de Mumm-Ra, un conquistador que, a lo largo de los años ha intentado conquistar la tercera tierra. Para lograrlo, debe capturar al líder de la oposición, Lion-O, a quien ya tiene localizado y está a punto de atacar.
 Lion-O debe escapar de la tierra y para ello, debe dirigirse de alguna manera a las estaciones espaciales disponibles antes de que los mutantes aliados de Mumm-Ra lo atrapen.
 Inicialmente, en el enunciado se puede observar que hay indicios claros de un grafo ponderado no dirigido al mencionar: “Una red de carreteras que conectan sus intersecciones”, “Cada carretera tiene una longitud conocida y los vehículos pueden circular por ellas en cualquiera de las dos direcciones”, por lo tanto, una representación de un grafo podría apuntar a que los vértices son las intersecciones y sus aristas no dirigidas son las carreteras.
@@ -41,6 +42,7 @@ Según la fórmula de física d = v*t despejando t: t = d/v, despejamos el tiemp
 Paso 2: Obtenemos igualmente la distancia mínima de Lion hacia la estacion espacial más cercana, en este caso es 600.
 
 Procedemos a despejar v con d = 600 y t = 15. El resultado debería coincidir con el output propuesto.
+
 <img width="419" height="156" alt="image" src="https://github.com/user-attachments/assets/336249b9-2277-4d96-9de7-2c4b7dd46d37" />
 
 **4 de noviembre**
@@ -48,6 +50,7 @@ Procedemos a despejar v con d = 600 y t = 15. El resultado debería coincidir co
 Analizando de nuevo el problema y replanteando lo razonado de forma ordenada en una tabla, específicamente con los datos del tercer caso de prueba, notamos que, con una de regla de tres podríamos resolver el problema para la realización del ejercicio, con sus respectivas conversión de unidades y que, este razonamiento coincidía exitosamente con el output.
 
 Adicionalmente, siguiendo la lógica anterior de la regla de tres, proporcionamos el siguiente caso de prueba:
+
 <img width="442" height="256" alt="image" src="https://github.com/user-attachments/assets/7111f66e-968b-4c8f-9042-2882f5c67d8d" />
 
 **5 de noviembre**
@@ -322,5 +325,5 @@ Gráfica asociada:
 
 <img width="288" height="185" alt="image" src="https://github.com/user-attachments/assets/2f133a84-b603-40b4-b806-96adcea32217" />
 
-Se plantea un caso que se específica más adelante en el documento: Nuestra hipótesis sobre los casos de captura. Es claro que cuando existan 2 o más caminos de intersecciones distintas con conexión directa hacia una salida espacial, con “distintos” nos referimos a que son independientes y no conducen a un cuello de botella en donde convergen. Con algunos casos de prueba realizados a papel y algunos evidenciados durante la bitácora, los casos en los que se captura a Lion es cuando el camino hacia la salida es único o convergen varios caminos y además es el nodo de inicio de los mutantes. Para este caso específico, es inutil buscar velocidades óptimas, pues los mutantes podrían permanecer en su nodo de inicio sabiendo que en algún momento llegaría Lion y capturarlo, pues estratégicamente saben que es su único acceso a la salida.
+Es claro que cuando existan 2 o más caminos de intersecciones distintas con conexión directa hacia una salida espacial, con “distintos” nos referimos a que son independientes y no conducen a un cuello de botella en donde convergen. Con algunos casos de prueba realizados a papel y algunos evidenciados durante la bitácora, los casos en los que se captura a Lion es cuando el camino hacia la salida es único o convergen varios caminos y además es el nodo de inicio de los mutantes. Para este caso específico, es inutil buscar velocidades óptimas, pues los mutantes podrían permanecer en su nodo de inicio sabiendo que en algún momento llegaría Lion y capturarlo, pues estratégicamente saben que es su único acceso a la salida.
 
