@@ -7,7 +7,7 @@ PROYECTO FINAL DEL CURSO
 ----
 Realizado por
 Nicolas Carrillo Romo
-Nicolle Ureña de Garcia
+Nicolle Ureña Garcia
 """
 
 from sys import stdin
@@ -29,9 +29,12 @@ def dijkstra(G, s):
     return dist
 
 def calcTime(distVector, speedMut):
-    time = [-1 for _ in range(len(distVector))]
+    time = [INF for _ in range(len(distVector))]
     for i in range(len(distVector)):
-        time[i] = (distVector[i]/speedMut)
+        if distVector[i] == 0:
+            time[i] = 0.0
+        elif speedMut > 0 and distVector[i] != INF:
+            time[i] = distVector[i] / speedMut
     return time
 
 def minMaxSpeed(G, exits, vMut, iniLion, iniMut):
