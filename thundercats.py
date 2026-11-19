@@ -38,20 +38,29 @@ def calcTime(distVector, speedMut):
     return time
 
 def minMaxSpeed(G, exits, vMut, iniLion, iniMut):
-    ans = -1
-    dMut = dijkstra(G, iniMut)
-    tMut = calcTime(dMut, vMut)
+    minSpeed = [INF for _ in range(len(G))]
+    minSpeed[iniLion] = 0.0
+    pqueue = list()
+    heappush(pqueue, (minSpeed[iniLion], 0.0, iniLion))
     
-    ## Dijkstra de Lion
-        #Para cada distancia de los mutantes:
-        if tMut[v] == INF:
-                    vReq = 0.0
-                elif tMut[v] == 0.0000001:
+    while len(pqueue) != 0:
+        vu, du, u = heappop(pqueue)
+        if minSpeed[u] == vu:
+            for v, duv in G[u]:
+                dv = du + duv
+                if tMut[v] == INF:
+                    vReq = 0.000001
+                elif tMut[v] == 0.0:
                     vReq = INF
                 else:
                     vReq = dv / tMut[v]
+                
+                vv = max(vu, vReq)
+                if vv < minSpeed[v]:
+                    minSpeed[v] = vv
+                    heappush(pqueue, (minSpeed[v], dv, v))
     
-    return ans
+    return minSpeed
 
 def main():
     T = int(stdin.readline())
