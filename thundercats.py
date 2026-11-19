@@ -38,11 +38,15 @@ def calcTime(distVector, speedMut):
     return time
 
 def minMaxSpeed(G, exits, vMut, iniLion, iniMut):
+    ans = -1
+    dMut = dijkstra(G, iniMut)
+    tMut = calcTime(dMut, vMut)
+    
+    # Dijkstra Minimax numérico: guarda la menor velocidad cuello de botella para llegar a cada nodo
     minSpeed = [INF for _ in range(len(G))]
     minSpeed[iniLion] = 0.0
     pqueue = list()
     heappush(pqueue, (minSpeed[iniLion], 0.0, iniLion))
-    
     while len(pqueue) != 0:
         vu, du, u = heappop(pqueue)
         if minSpeed[u] == vu:
@@ -58,7 +62,7 @@ def minMaxSpeed(G, exits, vMut, iniLion, iniMut):
                 vv = max(vu, vReq)
                 if vv < minSpeed[v]:
                     minSpeed[v] = vv
-                    heappush(pqueue, (minSpeed[v], dv, v))
+                    heappush(pqueue, (minSpeed[v], dv, v))       
     
     return minSpeed
 
