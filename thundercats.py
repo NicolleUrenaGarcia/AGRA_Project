@@ -41,8 +41,16 @@ def minMaxSpeed(G, exits, vMut, iniLion, iniMut):
     ans = -1
     dMut = dijkstra(G, iniMut)
     tMut = calcTime(dMut, vMut)
-    ## Hasta aqui tenemos 2 vectores dMut y tMut, cada uno contiene la distancia y tiempo de llegada
-    ## de los mutantes hacia todos los nodos
+    
+    ## Dijkstra de Lion
+        #Para cada distancia de los mutantes:
+        if tMut[v] == INF:
+                    vReq = 0.0
+                elif tMut[v] == 0.0000001:
+                    vReq = INF
+                else:
+                    vReq = dv / tMut[v]
+    
     return ans
 
 def main():
