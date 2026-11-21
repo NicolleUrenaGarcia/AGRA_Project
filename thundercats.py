@@ -74,7 +74,7 @@ def main():
         exits = []
         while M:
             A,B,D = map(int,stdin.readline().split())
-            D = (D*100)/1000
+            D = D/10
             intersc[A].append((B,D))
             intersc[B].append((A,D))
             M -= 1
