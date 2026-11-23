@@ -96,7 +96,7 @@ def main():
         else:
             ans = minMaxSpeed(intersc, exits, V, S, R)
         if ans >= 0:
-            print(f"Lion-O can escape at a speed of {ans:.6f} km/h!")
+            print(f"Lion-O can escape at a speed of {ans:.7f} km/h!")
         else:
             print("Mumm-Ra captures Lion-O!")
 main()
