@@ -89,7 +89,7 @@ def main():
         for i in e:
             exits.append(i)
         T -= 1
-        if (R in exits and len(exits)==1) or S == R:
+        if (R in exits and len(exits)==1):
             ans = -1
         elif S in exits:
             ans = 0
