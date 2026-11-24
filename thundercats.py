@@ -44,7 +44,7 @@ def minMaxSpeed(G, exits, vMut, iniLion, iniMut):
     tMut = calcTime(dMut, vMut)
     
     minSpeed = [INF for _ in range(len(G))]
-    minSpeed[iniLion] = 0.0
+    minSpeed[iniLion] = float("1e-7")
     pqueue = list()
     heappush(pqueue, (minSpeed[iniLion], 0.0, iniLion))
     
@@ -54,7 +54,7 @@ def minMaxSpeed(G, exits, vMut, iniLion, iniMut):
             for v, duv in G[u]:
                 dv = du + duv
                 if tMut[v] == INF:
-                    vReq = 0.0
+                    vReq = float("1e-7")
                 elif tMut[v] == 0.0:
                     vReq = INF
                 else:
@@ -92,7 +92,7 @@ def main():
         if (R in exits and len(exits)==1):
             ans = -1
         elif S in exits:
-            ans = 0
+            ans = float("1e-7")
         else:
             ans = minMaxSpeed(intersc, exits, V, S, R)
         if ans >= 0:
